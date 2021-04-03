@@ -17,8 +17,8 @@ public class Paciente {
         listaPac = new ArrayList();
     }
         
-    public Paciente(int codigo, String nome, String cpf, String sexo, String endereco) {
-        this.codigo = codigo;
+    public Paciente(String nome, String cpf, String sexo, String endereco) {
+        
         this.nome = nome;
         this.cpf = cpf;
         this.sexo = sexo;
@@ -26,8 +26,8 @@ public class Paciente {
         listaPac = new ArrayList();
     }
 
-    public Paciente(int Codigo, String nome, String cpf, String sexo, String endereco, String nasc) {
-        this.codigo = codigo;
+    public Paciente(String nome, String cpf, String sexo, String endereco, String nasc) {
+        
         this.nome = nome;
         this.cpf = cpf;
         this.sexo = sexo;
@@ -36,13 +36,7 @@ public class Paciente {
         listaPac = new ArrayList();
     }
 
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int Codigo) {
-        this.codigo = codigo;
-    }
+    
 
     public String getNome() {
         return nome;
@@ -101,7 +95,7 @@ public class Paciente {
     }
 
     public Object getDep() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
 
     

@@ -49,10 +49,11 @@ public class Principal extends javax.swing.JFrame {
     
     
     public void LoadTablePac(){
-        DefaultTableModel modelo = new DefaultTableModel(new Object[]{"Código","Nome", "CPF", "Sexo", "Endereço", "Nascimento"},0);
+        DefaultTableModel modelo = new DefaultTableModel(new Object[]{"Nome", "CPF", "Sexo", "Endereço", "Nascimento"},0);
             
         for(int i=0;i<listaPac.size();i++){
-            Object linha[] = new Object[]{listaPac.get(i).getCodigo(),
+            Object linha[] = new Object[]
+            {
             listaPac.get(i).getNome(),
             listaPac.get(i).getCpf(),
             listaPac.get(i).getSexo(),
@@ -69,17 +70,17 @@ public class Principal extends javax.swing.JFrame {
         tbl_pac.getColumnModel().getColumn(2).setPreferredWidth(100);
         tbl_pac.getColumnModel().getColumn(3).setPreferredWidth(70);
         tbl_pac.getColumnModel().getColumn(4).setPreferredWidth(200);
-        tbl_pac.getColumnModel().getColumn(5).setPreferredWidth(50);
+        
         
         LoadCBPac();
     }
     
     public void LoadTableProc(){
-        DefaultTableModel modelo = new DefaultTableModel(new Object[]{"Codigo","Descrição","Paciente"},0);
+        DefaultTableModel modelo = new DefaultTableModel(new Object[]{"Descrição","Paciente"},0);
             
         for(int i=0;i<listaProc.size();i++){
             Object linha[] = new Object[]
-            {listaProc.get(i).getMatricula(),
+            {
              listaProc.get(i).getDescricao(),
              listaProc.get(i).getDep().getNome()};
             modelo.addRow(linha);
@@ -88,7 +89,7 @@ public class Principal extends javax.swing.JFrame {
         tbl_proc.setModel(modelo);
         tbl_proc.getColumnModel().getColumn(0).setPreferredWidth(100);
         tbl_proc.getColumnModel().getColumn(1).setPreferredWidth(150);
-        tbl_proc.getColumnModel().getColumn(2).setPreferredWidth(150);
+        
     }
     
     public void LoadCBPac(){
@@ -103,11 +104,11 @@ public class Principal extends javax.swing.JFrame {
     }
     
     public void LoadTableDent(){
-        DefaultTableModel modelo = new DefaultTableModel(new Object[]{"Codigo","Nome","CPF","Sexo","Endereço","Nascimento","Especialidade"},0);
+        DefaultTableModel modelo = new DefaultTableModel(new Object[]{"Nome","CPF","Sexo","Endereço","Nascimento","Especialidade"},0);
             
         for(int i=0;i<listaDent.size();i++){
             Object linha[] = new Object[]
-            {listaDent.get(i).getCodigo(),
+            {
              listaDent.get(i).getNome(),
              listaDent.get(i).getCpf(),
              listaDent.get(i).getSexo(),
@@ -125,16 +126,16 @@ public class Principal extends javax.swing.JFrame {
         tbl_dent.getColumnModel().getColumn(3).setPreferredWidth(150);
         tbl_dent.getColumnModel().getColumn(4).setPreferredWidth(150);
         tbl_dent.getColumnModel().getColumn(5).setPreferredWidth(150);
-        tbl_dent.getColumnModel().getColumn(6).setPreferredWidth(150);
+        
     }
     
     
     public void LoadTableSec(){
-        DefaultTableModel modelo = new DefaultTableModel(new Object[]{"Codigo","Nome","CPF","Endereço"},0);
+        DefaultTableModel modelo = new DefaultTableModel(new Object[]{"Nome","CPF","Endereço"},0);
             
         for(int i=0;i<listaSec.size();i++){
             Object linha[] = new Object[]
-            {listaSec.get(i).getCodigo(),
+            {
              listaSec.get(i).getNome(),
              listaSec.get(i).getCpf(),
              listaSec.get(i).getEndereco()};
@@ -148,15 +149,15 @@ public class Principal extends javax.swing.JFrame {
         tbl_sec.getColumnModel().getColumn(0).setPreferredWidth(100);
         tbl_sec.getColumnModel().getColumn(1).setPreferredWidth(150);
         tbl_sec.getColumnModel().getColumn(2).setPreferredWidth(150);
-        tbl_sec.getColumnModel().getColumn(3).setPreferredWidth(150);     
+            
     }
     
     public void LoadTablePag(){
-        DefaultTableModel modelo = new DefaultTableModel(new Object[]{"Codigo","Forma de pagamento","Valor", "Paciente"},0);
+        DefaultTableModel modelo = new DefaultTableModel(new Object[]{"Forma de Pagamento","Valor", "Paciente"},0);
             
         for(int i=0;i<listaPag.size();i++){
             Object linha[] = new Object[]
-            {listaPag.get(i).getCodPag(),
+            {
              listaPag.get(i).getForma(),
              listaPag.get(i).getValor(),
              listaPag.get(i).getDep().getNome()};
@@ -167,7 +168,7 @@ public class Principal extends javax.swing.JFrame {
         tbl_pag.getColumnModel().getColumn(0).setPreferredWidth(100);
         tbl_pag.getColumnModel().getColumn(1).setPreferredWidth(150);
         tbl_pag.getColumnModel().getColumn(2).setPreferredWidth(150);
-        tbl_pag.getColumnModel().getColumn(3).setPreferredWidth(150);
+        
     }
     
     
@@ -204,7 +205,7 @@ public class Principal extends javax.swing.JFrame {
             case "Navegar":
                 btn_pac_salvar.setEnabled(false);
                 btn_pac_cancelar.setEnabled(false);
-                c_pac_codigo.setEnabled(false);
+         //       c_pac_codigo.setEnabled(false);
                 c_pac_nome.setEnabled(false);
                 c_pac_cpf.setEnabled(false);
                 c_pac_sexo.setEnabled(false);
@@ -218,7 +219,7 @@ public class Principal extends javax.swing.JFrame {
             case "Novo":
                 btn_pac_salvar.setEnabled(true);
                 btn_pac_cancelar.setEnabled(true);
-                c_pac_codigo.setEnabled(true);
+          //      c_pac_codigo.setEnabled(true);
                 c_pac_nome.setEnabled(true);
                 c_pac_cpf.setEnabled(true);
                 c_pac_endereco.setEnabled(true);
@@ -232,7 +233,7 @@ public class Principal extends javax.swing.JFrame {
             case "Editar":
                 btn_pac_salvar.setEnabled(false);
                 btn_pac_cancelar.setEnabled(false);
-                c_pac_codigo.setEnabled(true);
+           //     c_pac_codigo.setEnabled(true);
                 c_pac_nome.setEnabled(true);
                 c_pac_cpf.setEnabled(false);
                 c_pac_sexo.setEnabled(true);
@@ -258,7 +259,7 @@ public class Principal extends javax.swing.JFrame {
             case "Excluir":
                 btn_pac_salvar.setEnabled(false);
                 btn_pac_cancelar.setEnabled(false);
-                c_pac_codigo.setEnabled(false);
+            //    c_pac_codigo.setEnabled(false);
                 c_pac_nome.setEnabled(false);
                 c_pac_cpf.setEnabled(false);
                 c_pac_endereco.setEnabled(false);
@@ -272,7 +273,7 @@ public class Principal extends javax.swing.JFrame {
             case "Selecao":
                 btn_pac_salvar.setEnabled(false);
                 btn_pac_cancelar.setEnabled(false);
-                c_pac_codigo.setEnabled(false);
+            //    c_pac_codigo.setEnabled(false);
                 c_pac_nome.setEnabled(false);
                 c_pac_cpf.setEnabled(false);
                 c_pac_endereco.setEnabled(false);
@@ -285,7 +286,7 @@ public class Principal extends javax.swing.JFrame {
              case "Cancelar":
                 btn_pac_salvar.setEnabled(false);
                 btn_pac_cancelar.setEnabled(false);
-                c_pac_codigo.setEnabled(false);
+           //     c_pac_codigo.setEnabled(false);
                 c_pac_nome.setEnabled(false);
                 c_pac_cpf.setEnabled(false);
                 c_pac_endereco.setEnabled(false);
@@ -305,7 +306,7 @@ public class Principal extends javax.swing.JFrame {
             case "Navegar":
                 btn_proc_salvar.setEnabled(false);
                 btn_proc_cancelar.setEnabled(false);
-                c_proc_cod.setEnabled(false);
+          //      c_proc_cod.setEnabled(false);
                 c_desc_proc.setEnabled(false);
                 btn_proc_novo.setEnabled(true);
                 btn_proc_editar.setEnabled(false);
@@ -316,7 +317,7 @@ public class Principal extends javax.swing.JFrame {
             case "Novo":
                 btn_proc_salvar.setEnabled(true);
                 btn_proc_cancelar.setEnabled(true);
-                c_proc_cod.setEnabled(true);
+           //     c_proc_cod.setEnabled(true);
                 c_desc_proc.setEnabled(true);
                 cb_paciente.setEnabled(true);
                 btn_proc_novo.setEnabled(false);
@@ -327,7 +328,7 @@ public class Principal extends javax.swing.JFrame {
             case "Editar":
                 btn_proc_salvar.setEnabled(true);
                 btn_proc_cancelar.setEnabled(true);
-                c_proc_cod.setEnabled(true);
+           //     c_proc_cod.setEnabled(true);
                 c_desc_proc.setEnabled(true);
                 cb_paciente.setEnabled(true);
                 btn_proc_novo.setEnabled(true);
@@ -338,7 +339,7 @@ public class Principal extends javax.swing.JFrame {
             case "Excluir":
                 btn_proc_salvar.setEnabled(false);
                 btn_proc_cancelar.setEnabled(false);
-                c_proc_cod.setEnabled(false);
+           //     c_proc_cod.setEnabled(false);
                 c_desc_proc.setEnabled(false);
                 cb_paciente.setEnabled(false);
                 btn_proc_novo.setEnabled(true);
@@ -349,7 +350,7 @@ public class Principal extends javax.swing.JFrame {
             case "Selecao":
                 btn_proc_salvar.setEnabled(false);
                 btn_proc_cancelar.setEnabled(false);
-                c_proc_cod.setEnabled(false);
+           //     c_proc_cod.setEnabled(false);
                 c_desc_proc.setEnabled(false);
                 cb_paciente.setEnabled(false);
                 btn_proc_novo.setEnabled(true);
@@ -364,7 +365,7 @@ public class Principal extends javax.swing.JFrame {
             case "Navegar":
                 btn_dent_salvar.setEnabled(false);
                 btn_dent_cancela.setEnabled(false);
-                c_dent_codigo.setEnabled(false);
+         //       c_dent_codigo.setEnabled(false);
                 c_dent_nome.setEnabled(false);
                 c_dent_cpf.setEnabled(false);
                 c_dent_sexo.setEnabled(false);
@@ -379,7 +380,7 @@ public class Principal extends javax.swing.JFrame {
             case "Novo":
                 btn_dent_salvar.setEnabled(true);
                 btn_dent_cancela.setEnabled(true);
-                c_dent_codigo.setEnabled(true);
+           //     c_dent_codigo.setEnabled(true);
                 c_dent_nome.setEnabled(true);
                 c_dent_cpf.setEnabled(true);
                 c_dent_sexo.setEnabled(true);
@@ -394,7 +395,7 @@ public class Principal extends javax.swing.JFrame {
             case "Editar":
                 btn_dent_salvar.setEnabled(true);
                 btn_dent_cancela.setEnabled(true);
-                c_dent_codigo.setEnabled(true);
+           //     c_dent_codigo.setEnabled(true);
                 c_dent_nome.setEnabled(true);
                 c_dent_cpf.setEnabled(false);
                 c_dent_sexo.setEnabled(true);
@@ -409,7 +410,7 @@ public class Principal extends javax.swing.JFrame {
             case "Excluir":
                btn_dent_salvar.setEnabled(false);
                 btn_dent_cancela.setEnabled(false);
-                c_dent_codigo.setEnabled(false);
+          //      c_dent_codigo.setEnabled(false);
                 c_dent_nome.setEnabled(false);
                 c_dent_cpf.setEnabled(false);
                 c_dent_sexo.setEnabled(false);
@@ -424,7 +425,7 @@ public class Principal extends javax.swing.JFrame {
             case "Selecao":
                 btn_dent_salvar.setEnabled(false);
                 btn_dent_cancela.setEnabled(false);
-                c_dent_codigo.setEnabled(false);
+          //      c_dent_codigo.setEnabled(false);
                 c_dent_nome.setEnabled(false);
                 c_dent_cpf.setEnabled(false);
                 c_dent_sexo.setEnabled(false);
@@ -438,7 +439,7 @@ public class Principal extends javax.swing.JFrame {
             case "Cancelar":
                 btn_dent_salvar.setEnabled(false);
                 btn_dent_cancela.setEnabled(false);
-                c_dent_codigo.setEnabled(false);
+           //     c_dent_codigo.setEnabled(false);
                 c_dent_nome.setEnabled(false);
                 c_dent_cpf.setEnabled(false);
                 c_dent_sexo.setEnabled(false);
@@ -457,7 +458,7 @@ public class Principal extends javax.swing.JFrame {
             case "Navegar":
                 btn_sec_salvar.setEnabled(false);
                 btn_sec_cancelar.setEnabled(false);
-                c_sec_cod.setEnabled(false);
+             //   c_sec_cod.setEnabled(false);
                 c_sec_nome.setEnabled(false);
                 c_sec_cpf.setEnabled(false);
                 c_sec_endereco.setEnabled(false);                
@@ -469,7 +470,7 @@ public class Principal extends javax.swing.JFrame {
             case "Novo":
                 btn_sec_salvar.setEnabled(true);
                 btn_sec_cancelar.setEnabled(true);
-                c_sec_cod.setEnabled(true);
+           //     c_sec_cod.setEnabled(true);
                 c_sec_nome.setEnabled(true);
                 c_sec_cpf.setEnabled(true);
                 c_sec_endereco.setEnabled(true);               
@@ -481,7 +482,7 @@ public class Principal extends javax.swing.JFrame {
             case "Editar":
                 btn_sec_salvar.setEnabled(false);
                 btn_sec_cancelar.setEnabled(false);
-                c_sec_cod.setEnabled(true);
+            //    c_sec_cod.setEnabled(true);
                 c_sec_nome.setEnabled(true);
                 c_sec_cpf.setEnabled(false);                
                 c_sec_endereco.setEnabled(true);
@@ -493,7 +494,7 @@ public class Principal extends javax.swing.JFrame {
             case "Excluir":
                btn_sec_salvar.setEnabled(false);
                 btn_sec_cancelar.setEnabled(false);
-                c_sec_cod.setEnabled(false);
+           //     c_sec_cod.setEnabled(false);
                 c_sec_nome.setEnabled(false);
                 c_sec_cpf.setEnabled(false);                
                 c_sec_endereco.setEnabled(false);
@@ -505,7 +506,7 @@ public class Principal extends javax.swing.JFrame {
             case "Selecao":
                 btn_sec_salvar.setEnabled(false);
                 btn_sec_cancelar.setEnabled(false);
-                c_sec_cod.setEnabled(false);
+           //     c_sec_cod.setEnabled(false);
                 c_sec_nome.setEnabled(false);
                 c_sec_cpf.setEnabled(false);                
                 c_sec_endereco.setEnabled(false);
@@ -516,7 +517,7 @@ public class Principal extends javax.swing.JFrame {
             case "Cancelar":
                 btn_sec_salvar.setEnabled(false);
                 btn_sec_cancelar.setEnabled(false);
-                c_sec_cod.setEnabled(false);
+           //     c_sec_cod.setEnabled(false);
                 c_sec_nome.setEnabled(false);
                 c_sec_cpf.setEnabled(false);                
                 c_sec_endereco.setEnabled(false);
@@ -534,7 +535,7 @@ public class Principal extends javax.swing.JFrame {
             case "Navegar":
                 btn_pag_salvar.setEnabled(false);
                 btn_pag_cancelar.setEnabled(false);
-                c_pag_cod.setEnabled(false);
+             //   c_pag_cod.setEnabled(false);
                 c_pag_form.setEnabled(false);
                 c_pag_valor.setEnabled(false);
                 cb_pac1.setEnabled(false);                
@@ -546,7 +547,7 @@ public class Principal extends javax.swing.JFrame {
             case "Novo":
                 btn_pag_salvar.setEnabled(true);
                 btn_pag_cancelar.setEnabled(true);
-                c_pag_cod.setEnabled(true);
+          //      c_pag_cod.setEnabled(true);
                 c_pag_form.setEnabled(true);
                 c_pag_valor.setEnabled(true);
                 cb_pac1.setEnabled(true);               
@@ -558,7 +559,7 @@ public class Principal extends javax.swing.JFrame {
             case "Editar":
                 btn_pag_salvar.setEnabled(true);
                 btn_pag_cancelar.setEnabled(true);
-                c_pag_cod.setEnabled(true);
+            //    c_pag_cod.setEnabled(true);
                 c_pag_form.setEnabled(true);
                 c_pag_valor.setEnabled(true);                
                 cb_pac1.setEnabled(true);
@@ -570,7 +571,7 @@ public class Principal extends javax.swing.JFrame {
             case "Excluir":
                 btn_pag_salvar.setEnabled(false);
                 btn_pag_cancelar.setEnabled(false);
-                c_pag_cod.setEnabled(false);
+           //     c_pag_cod.setEnabled(false);
                 c_pag_form.setEnabled(false);
                 c_pag_valor.setEnabled(false);                
                 cb_pac1.setEnabled(false);
@@ -582,7 +583,7 @@ public class Principal extends javax.swing.JFrame {
             case "Selecao":
                 btn_pag_salvar.setEnabled(false);
                 btn_pag_cancelar.setEnabled(false);
-                c_pag_cod.setEnabled(false);
+           //     c_pag_cod.setEnabled(false);
                 c_pag_form.setEnabled(false);
                 c_pag_valor.setEnabled(false);                
                 cb_pac1.setEnabled(false);
@@ -593,7 +594,7 @@ public class Principal extends javax.swing.JFrame {
             case "Cancelar":
                 btn_pag_salvar.setEnabled(false);
                 btn_pag_cancelar.setEnabled(false);
-                c_pag_cod.setEnabled(false);
+            //    c_pag_cod.setEnabled(false);
                 c_pag_form.setEnabled(false);
                 c_pag_valor.setEnabled(false);                
                 cb_pac1.setEnabled(false);
@@ -622,8 +623,6 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_pac = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        c_pac_codigo = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         c_pac_nome = new javax.swing.JTextField();
         btn_pac_salvar = new javax.swing.JButton();
@@ -645,8 +644,6 @@ public class Principal extends javax.swing.JFrame {
         tbl_proc = new javax.swing.JTable();
         btn_proc_excluir = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        c_proc_cod = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         c_desc_proc = new javax.swing.JTextField();
         btn_proc_salvar = new javax.swing.JButton();
@@ -656,8 +653,6 @@ public class Principal extends javax.swing.JFrame {
         btn_proc_novo = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        c_dent_codigo = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         c_dent_nome = new javax.swing.JTextField();
         btn_dent_salvar = new javax.swing.JButton();
@@ -679,8 +674,6 @@ public class Principal extends javax.swing.JFrame {
         btn_dent_exc = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        c_sec_cod = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         c_sec_nome = new javax.swing.JTextField();
         btn_sec_salvar = new javax.swing.JButton();
@@ -696,8 +689,6 @@ public class Principal extends javax.swing.JFrame {
         btn_sec_exc = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
-        jLabel20 = new javax.swing.JLabel();
-        c_pag_cod = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         c_pag_form = new javax.swing.JTextField();
         btn_pag_salvar = new javax.swing.JButton();
@@ -758,14 +749,6 @@ public class Principal extends javax.swing.JFrame {
         jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel3MouseClicked(evt);
-            }
-        });
-
-        jLabel1.setText("Código:");
-
-        c_pac_codigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                c_pac_codigoActionPerformed(evt);
             }
         });
 
@@ -834,11 +817,6 @@ public class Principal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btn_pac_cancelar))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(c_pac_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(49, 49, 49)
@@ -865,10 +843,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(c_pac_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(8, 8, 8)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
                     .addComponent(c_pac_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -930,7 +905,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_pac_editar)
                     .addComponent(btn_pac_excluir))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Paciente", jPanel1);
@@ -991,8 +966,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Código:");
-
         jLabel4.setText("Descrição:");
 
         btn_proc_salvar.setText("Salvar");
@@ -1041,26 +1014,19 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel5)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3))
+                            .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(c_desc_proc)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(c_proc_cod, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cb_paciente, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(cb_paciente, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(c_proc_cod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(31, 31, 31)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(c_desc_proc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1100,7 +1066,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_proc_excluir)
                     .addComponent(btn_proc_editar))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Procedimento", jPanel2);
@@ -1109,14 +1075,6 @@ public class Principal extends javax.swing.JFrame {
         jPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel7MouseClicked(evt);
-            }
-        });
-
-        jLabel10.setText("Código:");
-
-        c_dent_codigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                c_dent_codigoActionPerformed(evt);
             }
         });
 
@@ -1193,11 +1151,6 @@ public class Principal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btn_dent_cancela))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(c_dent_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addGap(49, 49, 49)
@@ -1226,10 +1179,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(c_dent_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
-                .addGap(8, 8, 8)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel11)
                     .addComponent(c_dent_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1327,7 +1277,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_dent_edit)
                     .addComponent(btn_dent_exc))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Dentista", jPanel5);
@@ -1338,8 +1288,6 @@ public class Principal extends javax.swing.JFrame {
                 jPanel8MouseClicked(evt);
             }
         });
-
-        jLabel17.setText("Código:");
 
         jLabel18.setText("Nome:");
 
@@ -1394,11 +1342,6 @@ public class Principal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btn_sec_cancelar))
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(jLabel17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(c_sec_cod, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel8Layout.createSequentialGroup()
                                 .addGap(49, 49, 49)
@@ -1416,10 +1359,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(c_sec_cod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17))
-                .addGap(8, 8, 8)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel18)
                     .addComponent(c_sec_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1516,14 +1456,12 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_sec_exc)
                     .addComponent(btn_sec_edit))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Secretaria", jPanel6);
 
         jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Pagamento"));
-
-        jLabel20.setText("Código de pagamento:");
 
         jLabel22.setText("Forma de pagamento:");
 
@@ -1581,26 +1519,19 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel24)
-                            .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel23)))
+                            .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel23))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(cb_pac1, 0, 185, Short.MAX_VALUE)
-                            .addComponent(c_pag_cod, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(c_pag_form)
                             .addComponent(c_pag_valor))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(731, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel20)
-                    .addComponent(c_pag_cod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(37, 37, 37)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
                     .addComponent(c_pag_form, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1629,7 +1560,7 @@ public class Principal extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, true, true
@@ -1773,7 +1704,7 @@ public class Principal extends javax.swing.JFrame {
         modoSec = "Editar";
         ManipulaInterfaceSec();
         PreparedStatement ps = null;
-        int cod = Integer.parseInt(c_sec_cod.getText());
+    //    int cod = Integer.parseInt(c_sec_cod.getText());
         
         ResultSet rs = null;
         
@@ -1783,7 +1714,7 @@ public class Principal extends javax.swing.JFrame {
             
             rs = ps.executeQuery();
             TableModel tabela=tbl_sec.getModel();
-            Secretaria s = new Secretaria(cod, c_sec_nome.getText(), c_sec_cpf.getText(), c_sec_endereco.getText());
+            Secretaria s = new Secretaria(c_sec_nome.getText(), c_sec_cpf.getText(), c_sec_endereco.getText());
             
             
            
@@ -1806,7 +1737,7 @@ public class Principal extends javax.swing.JFrame {
        // 
         if(index>=0 && index<listaSec.size()){
             Secretaria S = listaSec.get(index);
-            c_sec_cod.setText(String.valueOf(S.getCodigo()));
+         //   c_sec_cod.setText(String.valueOf(S.getCodigo()));
             c_sec_nome.setText(S.getNome());
             c_sec_cpf.setText(S.getCpf());
             c_sec_endereco.setText(S.getEndereco());
@@ -1828,7 +1759,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_c_sec_cpfActionPerformed
 
     private void btn_sec_novoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sec_novoActionPerformed
-        c_sec_cod.setText("");
+     //   c_sec_cod.setText("");
         c_sec_nome.setText("");
         c_sec_cpf.setText("");
         c_sec_endereco.setText("");
@@ -1838,7 +1769,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_sec_novoActionPerformed
 
     private void btn_sec_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sec_cancelarActionPerformed
-        c_sec_cod.setText("");
+    //    c_sec_cod.setText("");
         c_sec_nome.setText("");
         c_sec_cpf.setText("");
         c_sec_endereco.setText("");
@@ -1851,20 +1782,20 @@ public class Principal extends javax.swing.JFrame {
     private void btn_sec_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sec_salvarActionPerformed
     
           PreparedStatement ps2 = null;
-        int cod = Integer.parseInt(c_sec_cod.getText());
+    //    int cod = Integer.parseInt(c_sec_cod.getText());
 
         
 
         if(verificarCpf(c_sec_cpf.getText())==true){
             if(modoSec.equals("Novo")){
                 
-                Secretaria S = new Secretaria(cod, c_sec_nome.getText(), c_sec_cpf.getText(), c_sec_endereco.getText());
+                Secretaria S = new Secretaria( c_sec_nome.getText(), c_sec_cpf.getText(), c_sec_endereco.getText());
                 secretariaDAO.getInstance().salvar(S);
                 listaSec.add(S);
                 
             }else if(modoSec.equals("Editar")){
                 int index = tbl_sec.getSelectedRow();
-                listaSec.get(index).setCodigo(cod);
+            //    listaSec.get(index).setCodigo(cod);
                 listaSec.get(index).setNome(c_sec_nome.getText());
                 listaSec.get(index).setCpf(c_sec_cpf.getText());
                 listaSec.get(index).setEndereco(c_sec_endereco.getText());
@@ -1873,7 +1804,7 @@ public class Principal extends javax.swing.JFrame {
             LoadTableSec();
             modoSec = "Navegar";
             ManipulaInterfaceSec();
-            c_sec_cod.setText("");
+       //     c_sec_cod.setText("");
             c_sec_nome.setText("");
             c_sec_cpf.setText("");
             c_sec_endereco.setText("");
@@ -1945,7 +1876,7 @@ public class Principal extends javax.swing.JFrame {
        modoDent = "Editar";
         ManipulaInterfaceDent();
         PreparedStatement ps = null;
-        int cod = Integer.parseInt(c_dent_codigo.getText());
+    //    int cod = Integer.parseInt(c_dent_codigo.getText());
         
         ResultSet rs = null;
         
@@ -1955,7 +1886,7 @@ public class Principal extends javax.swing.JFrame {
             
             rs = ps.executeQuery();
             TableModel tabela=tbl_dent.getModel();
-            Dentista DD = new Dentista(cod, c_dent_nome.getText(), c_dent_sexo.getText(), c_dent_cpf.getText(), c_dent_endereco.getText(), c_dent_nasc.getText(), c_dent_esp.getText());
+            Dentista DD = new Dentista(c_dent_nome.getText(), c_dent_sexo.getText(), c_dent_cpf.getText(), c_dent_endereco.getText(), c_dent_nasc.getText(), c_dent_esp.getText());
             
             
            
@@ -1983,7 +1914,7 @@ public class Principal extends javax.swing.JFrame {
        // 
         if(index>=0 && index<listaDent.size()){
             Dentista DD = listaDent.get(index);
-            c_dent_codigo.setText(String.valueOf(DD.getCodigo()));
+       //     c_dent_codigo.setText(String.valueOf(DD.getCodigo()));
             c_dent_nome.setText(DD.getNome());
             c_dent_cpf.setText(DD.getCpf());
             c_dent_nasc.setText(DD.getNasc());
@@ -2019,7 +1950,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_c_dent_sexoActionPerformed
 
     private void btn_dent_novoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_dent_novoActionPerformed
-        c_dent_codigo.setText("");
+     //   c_dent_codigo.setText("");
         c_dent_nome.setText("");
         c_dent_cpf.setText("");
         c_dent_endereco.setText("");
@@ -2030,7 +1961,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_dent_novoActionPerformed
 
     private void btn_dent_cancelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_dent_cancelaActionPerformed
-        c_dent_codigo.setText("");
+     //   c_dent_codigo.setText("");
         c_dent_nome.setText("");
         c_dent_cpf.setText("");
         c_dent_sexo.setText("");
@@ -2043,7 +1974,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void btn_dent_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_dent_salvarActionPerformed
         PreparedStatement ps2 = null;
-        int cod = Integer.parseInt(c_dent_codigo.getText());
+     //   int cod = Integer.parseInt(c_dent_codigo.getText());
 
         
 
@@ -2055,7 +1986,7 @@ public class Principal extends javax.swing.JFrame {
         try {
             format.setLenient(false);
             nasc = format.parse(nascTexto);
-            Dentista DD = new Dentista (cod, c_dent_nome.getText(), c_dent_cpf.getText(), c_dent_sexo.getText(), c_dent_endereco.getText(), c_dent_nasc.getText(), c_dent_esp.getText());
+            Dentista DD = new Dentista (c_dent_nome.getText(), c_dent_cpf.getText(), c_dent_sexo.getText(), c_dent_endereco.getText(), c_dent_nasc.getText(), c_dent_esp.getText());
             dentistaDAO.getInstance().salvar(DD);
             listaDent.add(DD);
             
@@ -2071,7 +2002,7 @@ public class Principal extends javax.swing.JFrame {
             }else if(modoDent.equals("Editar")){
                 
                 int index = tbl_dent.getSelectedRow();
-                listaDent.get(index).setCodigo(cod);
+            //    listaDent.get(index).setCodigo(cod);
                 listaDent.get(index).setNome(c_dent_nome.getText());
                 listaDent.get(index).setCpf(c_dent_cpf.getText());
                 listaDent.get(index).setSexo(c_dent_sexo.getText());
@@ -2083,7 +2014,7 @@ public class Principal extends javax.swing.JFrame {
             LoadTableDent();
             modoDent = "Navegar";
             ManipulaInterfaceDent();
-            c_dent_codigo.setText("");
+        //    c_dent_codigo.setText("");
             c_dent_nome.setText("");
             c_dent_cpf.setText("");
             c_dent_sexo.setText("");
@@ -2101,10 +2032,6 @@ public class Principal extends javax.swing.JFrame {
     private void c_dent_nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_dent_nomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_c_dent_nomeActionPerformed
-
-    private void c_dent_codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_dent_codigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_c_dent_codigoActionPerformed
 
     private void btn_proc_novoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_proc_novoActionPerformed
         modoProc = "Novo";
@@ -2129,19 +2056,19 @@ public class Principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Você deve selecionar um Paciente");
         }else{
             Procedimento F = new Procedimento();
-            F.setMatricula(Integer.parseInt(c_proc_cod.getText()));
+      //      F.setMatricula(Integer.parseInt(c_proc_cod.getText()));
             F.setDescricao(c_desc_proc.getText());
             F.setDep(listaPac.get(index-1));
             listaProc.add(F);
         
-            listaProc.add(F);
+            
             listaPac.get(index-1).addFunc(F);
             procedimentoDAO.getInstance().salvar(F);
         
         }
         LoadTableProc();
         modoProc = "Navegar";
-        c_proc_cod.setText("");
+    //    c_proc_cod.setText("");
         c_desc_proc.setText("");
         ManipulaInterfaceProc();
     }//GEN-LAST:event_btn_proc_salvarActionPerformed
@@ -2203,12 +2130,12 @@ public class Principal extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btn_pac_excluirActionPerformed
-
+//
     private void btn_pac_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pac_editarActionPerformed
         modoPac = "Editar";
         ManipulaInterfacePac();
         PreparedStatement ps = null;
-        int cod = Integer.parseInt(c_pac_codigo.getText());
+     //   int cod = Integer.parseInt(c_pac_codigo.getText());
         
         ResultSet rs = null;
         
@@ -2218,7 +2145,7 @@ public class Principal extends javax.swing.JFrame {
             
             rs = ps.executeQuery();
             TableModel tabela=tbl_pac.getModel();
-            Paciente p = new Paciente(cod, c_pac_nome.getText(), c_pac_cpf.getText(), c_pac_sexo.getText(), c_pac_endereco.getText(), c_pac_nasc.getText());
+            Paciente p = new Paciente(c_pac_nome.getText(), c_pac_cpf.getText(), c_pac_sexo.getText(), c_pac_endereco.getText(), c_pac_nasc.getText());
             
             
            
@@ -2252,7 +2179,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_c_pac_sexoActionPerformed
 
     private void btn_pac_novoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pac_novoActionPerformed
-        c_pac_codigo.setText("");
+      //  c_pac_codigo.setText("");
         c_pac_nome.setText("");
         c_pac_cpf.setText("");
         c_pac_endereco.setText("");
@@ -2264,7 +2191,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_pac_novoActionPerformed
 
     private void btn_pac_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pac_cancelarActionPerformed
-        c_pac_codigo.setText("");
+     //   c_pac_codigo.setText("");
         c_pac_nome.setText("");
         c_pac_cpf.setText("");
         c_pac_sexo.setText("");
@@ -2276,7 +2203,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void btn_pac_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pac_salvarActionPerformed
         PreparedStatement ps2 = null;
-        int cod = Integer.parseInt(c_pac_codigo.getText());
+     //   int cod = Integer.parseInt(c_pac_codigo.getText());
 
         
 
@@ -2288,7 +2215,7 @@ public class Principal extends javax.swing.JFrame {
         try {
             format.setLenient(false);
             nasc = format.parse(nascTexto);
-            Paciente D = new Paciente(cod, c_pac_nome.getText(), c_pac_cpf.getText(), c_pac_sexo.getText(), c_pac_endereco.getText(), c_pac_nasc.getText());
+            Paciente D = new Paciente(c_pac_nome.getText(), c_pac_cpf.getText(), c_pac_sexo.getText(), c_pac_endereco.getText(), c_pac_nasc.getText());
             pacienteDAO.getInstance().salvar(D);
             listaPac.add(D);
             
@@ -2303,7 +2230,7 @@ public class Principal extends javax.swing.JFrame {
                 
             }else if(modoPac.equals("Editar")){
                 int index = tbl_pac.getSelectedRow();
-                listaPac.get(index).setCodigo(cod);
+         //       listaPac.get(index).setCodigo(cod);
                 listaPac.get(index).setNome(c_pac_nome.getText());
                 listaPac.get(index).setCpf(c_pac_nome.getText());
                 listaPac.get(index).setSexo(c_pac_sexo.getText());
@@ -2314,7 +2241,7 @@ public class Principal extends javax.swing.JFrame {
             LoadTablePac();
             modoPac = "Navegar";
             ManipulaInterfacePac();
-            c_pac_codigo.setText("");
+       //     c_pac_codigo.setText("");
             c_pac_nome.setText("");
             c_pac_cpf.setText("");
             c_pac_sexo.setText("");
@@ -2338,16 +2265,12 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_c_pac_nomeActionPerformed
 
-    private void c_pac_codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_pac_codigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_c_pac_codigoActionPerformed
-
     private void tbl_pacMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_pacMouseClicked
         int index = tbl_pac.getSelectedRow();
        // 
         if(index>=0 && index<listaPac.size()){
             Paciente D = listaPac.get(index);
-            c_pac_codigo.setText(String.valueOf(D.getCodigo()));
+       //     c_pac_codigo.setText(String.valueOf(D.getCodigo()));
             c_pac_nome.setText(D.getNome());
             c_pac_cpf.setText(D.getCpf());
             c_pac_nasc.setText(D.getNasc());
@@ -2376,7 +2299,7 @@ public class Principal extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(this,"Você deve selecionar um Paciente");
         }else{
             Pagamento pp = new Pagamento();
-            pp.setCodPag(Integer.parseInt(c_pag_cod.getText()));
+      //      pp.setCodPag(Integer.parseInt(c_pag_cod.getText()));
             pp.setForma(c_pag_form.getText());
             pp.setValor(c_pag_valor.getText());
             pp.setDep(listaPac.get(index-1));
@@ -2388,7 +2311,7 @@ public class Principal extends javax.swing.JFrame {
         }
         LoadTablePag();
         modoPag = "Navegar";
-        c_pag_cod.setText("");
+     //   c_pag_cod.setText("");
         c_pag_valor.setText("");
         c_pag_form.setText("");
         ManipulaInterfacePag();
@@ -2414,7 +2337,9 @@ public class Principal extends javax.swing.JFrame {
 
     private void tbl_pagMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_pagMouseClicked
         modoPag="Selecao";
+        modoPag="Editar";
         ManipulaInterfacePag();
+        
     }//GEN-LAST:event_tbl_pagMouseClicked
 
     private void btn_pag_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pag_editarActionPerformed
@@ -2544,7 +2469,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_sec_exc;
     private javax.swing.JButton btn_sec_novo;
     private javax.swing.JButton btn_sec_salvar;
-    private javax.swing.JTextField c_dent_codigo;
     private javax.swing.JTextField c_dent_cpf;
     private javax.swing.JTextField c_dent_endereco;
     private javax.swing.JTextField c_dent_esp;
@@ -2552,40 +2476,31 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField c_dent_nome;
     private javax.swing.JTextField c_dent_sexo;
     private javax.swing.JTextField c_desc_proc;
-    private javax.swing.JTextField c_pac_codigo;
     private javax.swing.JTextField c_pac_cpf;
     private javax.swing.JTextField c_pac_endereco;
     private javax.swing.JTextField c_pac_nasc;
     private javax.swing.JTextField c_pac_nome;
     private javax.swing.JTextField c_pac_sexo;
-    private javax.swing.JTextField c_pag_cod;
     private javax.swing.JTextField c_pag_form;
     private javax.swing.JTextField c_pag_valor;
-    private javax.swing.JTextField c_proc_cod;
-    private javax.swing.JTextField c_sec_cod;
     private javax.swing.JTextField c_sec_cpf;
     private javax.swing.JTextField c_sec_endereco;
     private javax.swing.JTextField c_sec_nome;
     private javax.swing.JComboBox cb_pac1;
     private javax.swing.JComboBox cb_paciente;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

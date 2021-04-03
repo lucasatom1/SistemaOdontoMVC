@@ -8,20 +8,14 @@ public class Secretaria {
     private String cpf;
     private String endereco;
 
-    public Secretaria(int codigo, String nome, String cpf, String endereco) {
-        this.codigo = codigo;
+    public Secretaria(String nome, String cpf, String endereco) {
+        
         this.nome = nome;
         this.cpf = cpf;
         this.endereco = endereco;
     }
 
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
+   
 
     public String getNome() {
         return nome;

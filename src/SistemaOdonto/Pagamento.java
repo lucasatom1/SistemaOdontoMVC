@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Pagamento {
     
     private String valor;
-    private int codPag;
+    
     private String forma;
     private Paciente Dep;
     ArrayList<Pagamento> listaPag; 
@@ -39,13 +39,7 @@ public class Pagamento {
         this.valor = valor;
     }
 
-    public int getCodPag() {
-        return codPag;
-    }
-
-    public void setCodPag(int codPag) {
-        this.codPag = codPag;
-    }
+    
 
     public String getForma() {
         return forma;

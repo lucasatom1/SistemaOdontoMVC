@@ -2,25 +2,19 @@ package SistemaOdonto;
 
 
 public class Procedimento {
-    private int codProcedimento;
+    
     private String descricao;
     private Paciente Dep;
 
     public Procedimento() {
     }
 
-    public Procedimento(int Matricula, String Nome) {
-        this.codProcedimento = Matricula;
+    public Procedimento(String Nome) {
+        
         this.descricao = descricao;
     }
 
-    public int getMatricula() {
-        return codProcedimento;
-    }
-
-    public void setMatricula(int Matricula) {
-        this.codProcedimento = Matricula;
-    }
+    
 
     public String getDescricao() {
         return descricao;

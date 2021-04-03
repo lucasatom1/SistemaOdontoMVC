@@ -13,7 +13,7 @@ import java.util.Date;
  * @author PICHAU
  */
 public class Dentista {
-    private int codigo;
+    
     private String nome;
     private String sexo;
     private String cpf;
@@ -21,8 +21,8 @@ public class Dentista {
     private String nasc;
     private String especialidade;
 
-    public Dentista(int codigo, String nome, String sexo, String cpf, String endereco, String nasc, String especialidade) {
-        this.codigo = codigo;
+    public Dentista(String nome, String sexo, String cpf, String endereco, String nasc, String especialidade) {
+        
         this.nome = nome;
         this.sexo = sexo;
         this.cpf = cpf;
@@ -32,13 +32,7 @@ public class Dentista {
     }
     
 
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
+    
 
     public String getNome() {
         return nome;
