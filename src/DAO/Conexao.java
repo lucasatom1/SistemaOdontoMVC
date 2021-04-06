@@ -22,12 +22,12 @@ public class Conexao {
         String userName = "root";
         String password = "";
         String url = "jdbc:mysql://localhost:3306/odonto_db"; 
-        String driver = "com.mysql.jdbc.Driver";
        // String driver = "org.mariadb.jdbc.Driver";
 
         try {
-            Class.forName("org.gjt.mm.mysql.Driver");
-            conn = DriverManager.getConnection(url, userName, password);
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = (Connection) DriverManager.getConnection(url, userName, password);
+            System.out.println("conectado");
         } catch (Exception e) {
             e.printStackTrace();
         }

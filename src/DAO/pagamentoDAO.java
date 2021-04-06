@@ -5,63 +5,83 @@
  */
 package DAO;
 
-import SistemaOdonto.Paciente;
-import SistemaOdonto.Pagamento;
-import SistemaOdonto.Principal;
+import Model.Paciente;
+import Model.Pagamento;
+import View.Principal;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+public class PagamentoDAO {
 
-public class pagamentoDAO {
     private String sql;
     private Conexao conexao;
-    ArrayList<Pagamento> listaPagAuxDelet= new ArrayList<Pagamento>();
-    private static pagamentoDAO instance;
+    ArrayList<Pagamento> listaPagAuxDelet = new ArrayList<Pagamento>();
+    private static PagamentoDAO instance;
 
-    public static pagamentoDAO getInstance() {
+    public static PagamentoDAO getInstance() {
         if (instance == null) {
-            instance = new pagamentoDAO();
+            instance = new PagamentoDAO();
         }
         return instance;
     }
-    
-    public static void  salvar(Pagamento pagamento){
+
+    public static int salvar(Pagamento pagamento) {
         PreparedStatement ps2;
+        int idx = 0;
+
         try {
             ps2 = Conexao.conexao().prepareStatement("Insert into pagamento (forma, valor, nome_pac) values (?,?,?)");
             ps2.setString(1, pagamento.getForma());
             ps2.setString(2, pagamento.getValor());
             ps2.setString(3, pagamento.getDep().getNome());
             ps2.executeUpdate();
-        } catch (SQLException ex) {
-            Logger.getLogger(pagamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-            //
-        
-    }
-    
-    
-    public static void editar(Pagamento pagamento, Paciente paciente, String aux) throws SQLException{
 
-        System.out.println("aux "+paciente.getNome());
+            ResultSet rs = ps2.getGeneratedKeys();
+            if (rs.next()) {
+                idx = rs.getInt(1);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PagamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return idx;
+    }
+
+    public static void editar(Pagamento pagamento) throws SQLException {
+
         PreparedStatement ps = null;
-        ps = Conexao.conexao().prepareStatement("Update pagamento forma = ?,nome_pac = ?, valor = ? Where nome = ?" );
-                    
-                    ps.setString(1, pagamento.getForma());
-                    ps.setString(2, pagamento.getDep().getNome()); 
-                    ps.setString(3, pagamento.getValor());
-                    ps.setString(4, aux);
-                    ps.executeUpdate();
+        ps = Conexao.conexao().prepareStatement("Update pagamento SET forma = ?, nome_pac = ?, valor = ? Where Cod_pag = ?");
+
+        ps.setString(1, pagamento.getForma());
+        ps.setString(2, pagamento.getDep().getNome());
+        ps.setString(3, pagamento.getValor());
+        ps.setInt(4, pagamento.getId());
+        ps.executeUpdate();
         //
     }
-   
-  public static void excluir() throws SQLException{
-  }
-  
-  
-  public static void cancelar() throws SQLException{
-  }
+
+    public void excluir(int id) {
+        try {
+            PreparedStatement ps = Conexao.conexao().prepareStatement("DELETE FROM pagamento WHERE Cod_pag = ?");
+            ps.setInt(1, id);
+
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
+
+    public ResultSet selecionar() {
+        try {
+            PreparedStatement ps = Conexao.conexao().prepareStatement("SELECT * FROM pagamento");
+            ResultSet rs = ps.executeQuery();
+            return rs;
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return null;
+    }
 }
